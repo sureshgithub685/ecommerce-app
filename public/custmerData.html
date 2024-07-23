@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+   <div class="row" style="margin: 30px;">
+     <div class="col-md-3">
+        custmer Name:
+        <input type="text" name="name" class="form-control" id="name"/><br></br>
+        custmer city:
+        <input type="text" name="city"  class="form-control"id="city"/><br></br>
+        custmer country:
+        <input type="text" name="country" class="form-control" id="country"/><br></br>
+        custmer pincode:
+        <input type="number" name="number" class="form-control" id="pincode"/><br></br>
+        <label>total amount:</label>
+        <input type="number" name="amount" class="form-control" id="amount" disabled/><br></br>
+        <button class="btn btn-success" id="save">save</button>
+     </div>
+   </div>
+
+
+   <script>
+      const myTotalprice = localStorage.getItem('total')
+      $("#amount").val(myTotalprice)
+
+      const myBtn=document.getElementById('save')
+      myBtn.addEventListener('click',function(){
+       const myNam=$("#name").val()
+       const myCity=$("#city").val()
+       const myCountry=$("#country").val()
+       const mypincode=$("#pincode").val()
+
+       localStorage.setItem('NAME',myNam)
+       localStorage.setItem('CITY',myCity)
+       localStorage.setItem('COUNTRY',myCountry)
+       localStorage.setItem('PINCODE',mypincode)
+      })
+     
+   </script>
+
+
+    
+</body>
+</html>
